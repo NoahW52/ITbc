@@ -1,0 +1,56 @@
+
+// QUICK ACTIVITY
+/*const nameButton = document.getElementById('nameButton')
+const idButton = document.getElementById('idbutton')
+
+idButton.addEventListener('click', function() {
+    const nameBox = nameButton.value 
+    console.log(nameBox)
+})
+
+
+const btnclr = document.getElementById('Q1')
+btnclr.addEventListener('click', function() {
+    btnclr.setAttribute('style', 'background-color: red')
+
+*/
+
+//////////////NOTES///////////////////
+/*
+to use 2 javascript files create a script source in the HTML for each script
+which ever one will be calling from the other, you must put the one that's being called FROM first
+*/
+/*
+const posts = document.getElementById('postsUl')
+
+for(let i = 0; i < posts.length; i++) {
+    const li = document.createElement('li')
+    posts.appendChild(li)
+
+    const title = document.createElement('titlePost')
+    title.setAttribute()
+}
+*/ 
+///////////////ACTIVITY 2 ABOVE
+/*
+for(let index = 0; index < movies.length; index++) {
+    let movie = movies[index]
+    const movieItem = ``
+    <li>
+        <img src = "${movie.Poster}" />
+        <h1>${movie.Title}</h1>
+        <i>${movie.Year}</i>
+    </li>`
+    moviesUl.innerHTML += movieItem - a better way to do this is: moviesUl.insertAdjacentHTML('beforeend', movieItem)
+    
+}
+*/
+
+//Usually going to use beforeend with insertAdjacentHTML
+
+/////////////////////UNDERSTADING .INNERHTML///////////////////////////////
+/*
+menuList.innerHTML = menuItems.join('')
+
+the .innerHTML in this example is applying what is in the variable "menuItems" (so the structure and everything inside of that) and applying it to the menuList HTML
+*/

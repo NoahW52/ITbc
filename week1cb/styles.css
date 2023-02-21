@@ -1,0 +1,75 @@
+body {
+    background-color: wheat;
+    margin: 0;
+}
+main {
+    background-color: black;
+    height: 100%;
+    margin: 50 50 0 50;
+    position: relative;
+}
+.red {
+    background-color: red;
+    
+}
+table {
+    border: 1px solid;
+    position: absolute;
+    width: 100%;
+    height: 300px;
+}
+.yellow1{
+   background-color: yellow;
+}
+.green1{
+    background-color: green;
+} 
+.blue1{
+    background-color: blue;
+   
+}
+.tdblack{
+    background-color: black;
+    position: relative;
+}
+h1 {
+    background-color: black;
+    color: antiquewhite;
+    padding-left: 84%;
+}
+.ball1 {
+    background-color: aliceblue;
+    color: white;
+    width: 20%;
+    height: 20%;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+}
+.ball2 {
+    background-color: aliceblue;
+    color: white;
+    width: 20%;
+    height: 20%;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+}
+.ball3 {
+    background-color: aliceblue;
+    color: white;
+    width: 1%;
+    height: 1.5%;
+    margin-top: 500px;
+    margin-left: 250px;
+    position: absolute;
+}
+.bar {
+    background-color: aliceblue;
+    color: white;
+    width: 20%;
+    height: 1.5%;
+    top: 700px;
+    left: 250px;
+    position: absolute;
+}

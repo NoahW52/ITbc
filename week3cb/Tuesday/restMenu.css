@@ -1,0 +1,10 @@
+.dish {
+    width: 50vw;
+    height: 50vh;
+    object-fit: cover;
+}
+@media(min-width: 0px) and (max-width: 680px) {
+    .dish {
+        display: flex;
+    }
+}
