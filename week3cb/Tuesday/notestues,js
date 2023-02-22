@@ -52,5 +52,6 @@ for(let index = 0; index < movies.length; index++) {
 /*
 menuList.innerHTML = menuItems.join('')
 
-the .innerHTML in this example is applying what is in the variable "menuItems" (so the structure and everything inside of that) and applying it to the menuList HTML
+the .innerHTML in this example is applying what is in the variable "menuItems" (so the structure and everything inside of that) and applying it to the menuList in the HTML.
+The menuList in this example is the id name for my <ul> in my HTML
 */
