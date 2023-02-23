@@ -6,9 +6,10 @@ const articles = news.articles
 //dropdown logic
 const sourcesArr = sources.sources
 const sourceNames = sourcesArr.map((source) => {
-    return `<option>${source.name}</option>`
+    return `
+    <option>${source.name}</option>`
 })
-dropDown.innerHTML = sourceNames
+dropDown.innerHTML += sourceNames
 
 function filterSources() {
     if(this.value == 'All Sources') {
@@ -34,7 +35,7 @@ function generateNews(filteredArticles) {
         <div>${article.publishedAt}</div>
         `
     })
-    layout.innerHTML = info.join('')
+    layout.innerHTML += info.join('')
 }
 
 generateNews(articles)

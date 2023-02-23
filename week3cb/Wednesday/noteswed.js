@@ -41,3 +41,4 @@ document.getElementById("showQuotesBtn").addEventListener("click", showQuotes);
 
 //Use this.value to filter articles
 //news.article.filter to pass the this.value to filter articles by source name
+

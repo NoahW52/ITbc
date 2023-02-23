@@ -14,7 +14,7 @@ existElm.insertAdjacentElement("afterend", newP)
 */
 //Q3
 
-const body = document.getElementById('bodybody')
+/*const body = document.getElementById('bodybody')
 
 const imgBtn = document.createElement('button')
 imgBtn.innerHTML = 'Click to generate new ball pic'
@@ -26,3 +26,5 @@ body.appendChild(rndImg)
 imgBtn.addEventListener('click', function() {
     rndImg.setAttribute('src', 'https://picsum.photos/200/300')
 })
+*/
+
