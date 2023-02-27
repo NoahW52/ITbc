@@ -1,0 +1,67 @@
+body {
+    background-color: #1c1c1c;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  h1 {
+    color: #f9d71c;
+  }
+  
+  #movieList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .movie {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid #f9d71c;
+    border-radius: 10px;
+    background-color: #2b2b2b;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .movie:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  #movieList a {
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  #movieList img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+  
+  .bigCard {
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #f9d71c;
+    border-radius: 10px;
+    background-color: #2b2b2b;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .bigCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);
+  }
+  
+  .bigTitle {
+    color: #f9d71c;
+    margin-top: 0;
+  }
+  
+  .bigPoster {
+    width: 40%;
+    margin-left: 20px;
+    border-radius: 5px;
+  }
