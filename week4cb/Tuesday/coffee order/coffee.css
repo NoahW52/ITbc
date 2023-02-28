@@ -1,0 +1,31 @@
+#add {
+    background-color: blue;
+    color: white;
+    padding: 10px 20 px;
+    cursor: pointer;
+}
+#emailButton {
+    background-color: blue;
+    color: white;
+    padding: 10px 20 px;
+    cursor: pointer;
+}
+#deleteBttn {
+    background-color: blue;
+    color: white;
+    padding: 10px 20 px;
+    cursor: pointer;
+}
+#selectedEmail {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+input[type="text"],
+button {
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}

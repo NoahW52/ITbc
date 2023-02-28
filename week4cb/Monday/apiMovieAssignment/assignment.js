@@ -3,7 +3,7 @@ const movieImage = document.getElementById('movieImage')
 
 function generateMovieList() {
 
-const request = new XMLHttpRequest
+const request = new XMLHttpRequest()
 request.addEventListener('load', function() {
     const parsed = JSON.parse(this.response)
     const moviesArr = parsed.Search
