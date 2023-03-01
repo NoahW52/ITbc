@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(36, 69, 69);
+    display: flex;
+    justify-content: center;
+}
+#weatherUL {
+    display: flex
+} 
+#weatherInfo {
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+    color: burlywood;
+    border-right: 5px solid rgb(16, 58, 25);
+    padding: 20px;
+
+}
+ul {
+    background-color: brown;
+    padding: 5%;
+    padding-left: 4%;
+    color: black;
+    font-size: 25px;
+    border: 50%;
+}
+
+#searchButton {
+    background-color: brown;
+}
+#searchText {
+    background-color: lightcoral;
+    color: black;
+}
+input {
+    margin-top: 0.5rem;
+}
+
+input::placeholder {
+    font-weight: bold;
+    opacity: 0.5;
+    color: black;
+}
+#wrapper {
+    background-color: rgb(16, 58, 25);
+    border: 3px solid coral;
+    margin-top: 5rem;
+    padding: 3rem;
+}

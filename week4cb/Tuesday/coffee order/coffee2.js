@@ -16,7 +16,7 @@ function display() {
     request.addEventListener('load', function() {
         console.log(this)
         const parsed = JSON.parse(this.responseText)
-        coffeeDetail = parsed.map(function(coffee) {
+        const coffeeDetail = parsed.map(function(coffee) {
             return ` <div>
             <h1>${coffee.email}'s Order</h1>
             <li>${coffee.email}</li>
@@ -80,3 +80,5 @@ deleteBttn.addEventListener('click', deleteByEmail)
 emailButton.addEventListener('click', emailLookUp)
 addCoffeeButton.addEventListener('click', createOrder)
 display()
+
+
