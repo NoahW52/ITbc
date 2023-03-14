@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <a href="http://localhost:8080/addTrip">Click here to add another trip!</a>
+    {{#tripsObj}}
+    <div>
+        <b>{{title}}</b>
+        <img src= "{{image}}">
+        {{departure}}
+        {{arrive}}
+    </div>
+    {{/tripsObj}}
+
+</body>
+</html>
