@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="/movies/create">add a movie!</a>
+    <a href="/movies">Show All Movies</a>
+    <section>
+        {{#arr}}
+        <form action="/movies/delete" method="POST">
+        <div class="movieCard">
+            <h1>{{title}}
+            <p>{{description}}</p>
+            <p>{{genre}}</p>
+            <img src="{{posterURL}}">
+            <input type="hidden" value={{id}} name="id"/>
+            <button>remove</button>
+        </div>
+        </form>
+        <form action="/movies/{{id}}" method="POST">
+            <button>Show Details</button>
+        </form>
+        {{/arr}}
+    </section>
+    
+</body>
+</html>
