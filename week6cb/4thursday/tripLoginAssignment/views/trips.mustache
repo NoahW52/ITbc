@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<b>
+    <a href="/trips/addtrip">Add Trips Here</a>
+</b>
+    {{#arr}}
+        <form method="post" action="/trips/delete">
+            {{title}}
+            {{imageURL}}
+            {{departure}}
+            {{arrive}}
+            <input type="hidden" value={{id}} name="id">
+            <button>delete</button>
+        </form>
+    {{/arr}}
+
+</body>
+</html>
