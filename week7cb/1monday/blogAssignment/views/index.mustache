@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Blog Feed</h1>
+    <form action="/add" method="POST">
+    <input type = "text" placeholder = "title" name = "title" />
+    <input type = "text" placeholder = "body" name = "body" />
+    <button>add blog</button>
+    </form>
+    <ul>
+    {{#blog}}
+        <form method="POST" action="/delete-blog">
+            <h2>{{title}}</h2>
+            <li>{{body}}</li>
+            <input type = "hidden" name="id" value={{post_id}} />
+            <button>delete</button>
+        </form>
+    {{/blog}}
+    <form action="" method="POST"></form>
+    </ul>   
+</body>
+</html>
