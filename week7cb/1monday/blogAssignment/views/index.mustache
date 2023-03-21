@@ -8,18 +8,21 @@
     <form action="/add" method="POST">
     <input type = "text" placeholder = "title" name = "title" />
     <input type = "text" placeholder = "body" name = "body" />
-    <button>add blog</button>
+    <button>add post</button>
     </form>
     <ul>
     {{#blog}}
         <form method="POST" action="/delete-blog">
             <h2>{{title}}</h2>
             <li>{{body}}</li>
-            <input type = "hidden" name="id" value={{post_id}} />
+            <input type = "hidden" name="blogId" value={{post_id}} />
             <button>delete</button>
         </form>
+        <form action="/post-details" method="POST">
+            <input type="hidden" name = "blogId" value={{post_id}} />
+            <button>view details</button>
+        </form>
     {{/blog}}
-    <form action="" method="POST"></form>
     </ul>   
 </body>
 </html>

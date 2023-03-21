@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Post Feed</h1>
+    {{#post}}
+        <form method="POST" action="/delete-blog">
+            <h2>{{title}}</h2>
+            <li>{{body}}</li>
+            <input type = "hidden" name="blogId" value={{post_id}} />
+            <button>delete</button>
+        </form>
+            {{#comments}}
+            {{body}}
+    {{/comments}}
+    {{/post}}
+    </ul>   
+</body>
+</html>
