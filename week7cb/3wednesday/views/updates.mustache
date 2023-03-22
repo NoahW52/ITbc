@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <section>
+        <h1>Update a Blog</h1>
+            <form action="/update-blog-info" method="POST">
+                <input type="text" value={{title}} name="title">
+                <input type="text" value={{body}} name="body">
+                <select name="category">
+                    <option value="js">Javascript</option>
+                    <option value="python">Python</option>
+                    <option value="ios">IOS</option>
+                    <option value="android">Android</option>
+                </select>
+                <input type="hidden" value={{id}} name="id">
+                <button>Update Blog</button>
+            </form>
+    </section>
+</body>
+</html>

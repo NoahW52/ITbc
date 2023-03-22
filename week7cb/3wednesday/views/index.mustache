@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+<h1>Blog Posts</h1>
+    <form action="/blogs">
+    <button>View All Blogs</button>
+</form>
+
+    <form action="/add" method="POST">
+        <input type="text" placeholder="Enter Blog Title" name="title">
+        <input type="text" placeholder="Enter Blog Body" name="body">
+        <select name="category">
+        <option value="Javascript">Javascript</option>
+        <option value="Python">Python</option>
+        <option value="IOS">IOS</option>
+        <option value="Android">Android</option>
+        </select>
+           <button>Enter Blog</button>
+    </form>
+
+    <form action="/filter" method="POST">
+        <button>Filter by Category</button>
+    <select name="category">
+        <option value="Javascript">JavaScript</option>
+        <option value="Python">Python</option>
+        <option value="IOS">IOS</option>
+        <option value="Android">Android</option>
+    </select>
+    </form>
+
+    {{#blogs}}
+    <form action="/delete-blog" method="POST">
+        <li>{{title}}</li>
+        <li>{{body}}</li>
+        <li>{{category}}</li>
+        <input type="hidden" value={{id}} name="id">
+        <button>Delete Blog</button>
+    </form>
+
+    <form action="/update-blog-page" method="POST">
+    <input type="hidden" value={{id}} name="id">
+        <button>Update Blog</button>
+    </form>
+        <div>----------------------------------------------</div>
+    {{/blogs}}    
+</body>
+</html>
