@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>Blog Posts</h1>
+<div>----------------------------------------------</div>
     <form action="/blogs">
     <button>View All Blogs</button>
 </form>
@@ -45,6 +46,26 @@
         <button>Update Blog</button>
     </form>
         <div>----------------------------------------------</div>
+
+    <form action="/add-comment" method="POST">
+        <input type="text" placeholder="Title your comment here" name="commentTitle"/>
+        <input type="text" placeholder="Enter your comment here" name="commentBody"/>
+        <input type="hidden" value={{id}} name="post_id"/>
+        <button>Enter Comment</button>
+    </form>
+    <div>----------------------------------------------</div>
+
+    {{#comments}}
+    <section>
+    <form action="/delete-comment" method="POST">
+    {{title}}-{{body}}
+    <input type="hidden" name="commentId" value={{id}}>
+    <button>delete Comment</button>
+    {{/comments}}
+    </section>
+    </form>
+
+    <div>----------------------------------------------</div>
     {{/blogs}}    
 </body>
 </html>

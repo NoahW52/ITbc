@@ -15,9 +15,19 @@ app.use(session({
     secret: 'thisisanything',
     saveUninitialized: false
 }))
+app.get('/', (req, res) => {
+    res.redirect('/blogs')
+})
 
 app.get('/blogs', async(req, res) => {
-    const blogs = await models.Blog.findAll({})
+    const blogs = await models.Blog.findAll({
+        include: [
+            {
+                model:models.Comment,
+                as: 'comments'
+            }
+        ]
+    })
     res.render('index', {blogs: blogs})
 })
 
@@ -37,7 +47,7 @@ app.post('/add', async (req, res) => {
 })
 app.post('/delete-blog', async (req, res) => {
     const blogId = parseInt(req.body.id)
-    const deleteBlog = await models.Blog.destroy({
+    await models.Blog.destroy({
         where: {
             id: blogId
         }
@@ -93,8 +103,28 @@ app.post('/filter', async (req, res) => {
 
     res.render('index', {blogs: filteredArr})
 })
+app.post('/add-comment', async (req, res) => {
+    const title = req.body.commentTitle
+    const body = req.body.commentBody
+    const postId = parseInt(req.body.post_id)
 
+    const comment = models.Comment.build({
+        title: title,
+        body: body,
+        post_id: postId
+    })
 
+    await comment.save()
+    res.redirect('/blogs')
+})
+app.post('/delete-comment', async (req, res) => {
+    await models.Comment.destroy({
+        where: {
+            id: parseInt(req.body.commentId)
+        }
+    })
+    res.redirect('/blogs')
+})
 
 
 
