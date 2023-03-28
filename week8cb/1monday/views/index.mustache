@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="/">View Tasks</a>
+    <h1>Tasks</h1>
+            <form action="/add-item" method="POST">
+            <input type="text" placeholder="Task Name:" name="taskName">
+            <input type="text" placeholder="Task Priority" name="priority">
+            <input type="date" name="date">
+            <button>Add a task here!</button>
+        </form>
+
+
+    {{#todos}}
+        {{taskName}}
+        {{priority}}
+        {{date}}
+    {{/todos}}
+    
+</body>
+</html>

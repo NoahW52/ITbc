@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update page </h1>  
+    <form action="/updatedInfo" method="POST">
+        <input type="text" value="{{taskName}}" name="taskName">
+        <input type="text" value="{{priority}}" name="priority">
+        <input type="date" value="{{date}}" name="date">
+        <input type="hidden" value={{_id}} name="id">
+        <button>Update</button>
+    </form>  
+</body>
+</html>
