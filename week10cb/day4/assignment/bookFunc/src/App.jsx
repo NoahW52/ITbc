@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import Books from './components/Books'
 
+
 function App() {
-  const [bookProp, setBooks] = useState([])
+  const [books, setBooks] = useState([])
 
   useEffect(() => {
     fetchBooks()
@@ -13,15 +14,16 @@ function App() {
     const response = await fetch('http://localhost:8080/api/books')
     const result = await response.json()
     setBooks(result)
-    console.log(result)
   }
 
 
-
   return(
-    <div className='App'>
-      <Books bookComp={bookProp}/>
-    </div>
+    <>
+      <h1>Welcome to Book Barn!</h1>
+      <div className='App'>
+        <Books allBooks={books}/>
+      </div>
+    </>
   )
 }
 

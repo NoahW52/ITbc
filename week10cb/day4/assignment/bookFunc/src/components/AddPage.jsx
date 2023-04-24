@@ -1,0 +1,43 @@
+import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+function AddPage() {
+    const navigate = useNavigate()
+    const [book, setBook] = useState({})
+
+    const handleBookChange = (e) => {
+        setBook({
+            ...book,
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const handleAddBook = async () => {
+        const response = await fetch('http://localhost:8080/api/add-book', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(book)
+        }) 
+        const saveBook = await response.json()
+        if(saveBook) {
+            navigate('/')
+        }else {
+
+        }  
+    }
+
+    return (
+        <>
+            <input type="text" placeholder="Title" name="title" onChange={handleBookChange} />
+            <input type="text" placeholder="Genre" name="genre" onChange={handleBookChange} />
+            <input type="text" placeholder="author" name="publisher" onChange={handleBookChange} />
+            <input type="text" placeholder="year" name="year" onChange={handleBookChange} />
+            <input type="text" placeholder="book pic" name="imageURL" onChange={handleBookChange} />
+            <button onClick={handleAddBook} >Submit</button>
+        </>
+    )
+}
+
+export default AddPage
