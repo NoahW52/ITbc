@@ -18,11 +18,11 @@ mongoose.connect('mongodb+srv://nwright5252:j8bNPn3toSHK0T67@cluster0.xmz6isa.mo
 })
 
 app.post('/api/add-book', async (req,res) => {
-    const bookTitle = req.body.bookTitle
-    const bookGenre = req.body.bookGenre
-    const bookPublisher = req.body.bookPublisher
-    const bookYear = req.body.bookYear
-    const bookImageURL = req.body.bookImageURL
+    const bookTitle = req.body.title
+    const bookGenre = req.body.genre
+    const bookPublisher = req.body.publisher
+    const bookYear = req.body.year
+    const bookImageURL = req.body.imageURL
 
     const book = new Book({
         bookTitle:bookTitle,
@@ -33,6 +33,12 @@ app.post('/api/add-book', async (req,res) => {
     })
     await book.save()
     res.json(book)
+})
+
+app.delete('/api/books/:_id', async (req,res) => {
+    const id = req.params
+    const deleteBook = await Book.findByIdAndDelete(id)
+    res.json(deleteBook)
 })
 
 app.get('/api/books', async (req,res) => {
