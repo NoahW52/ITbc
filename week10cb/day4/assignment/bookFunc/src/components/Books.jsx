@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { connect } from "react-redux";
+import '../css/books.css'
+import * as actionCreators from '../store/creators/actionCreators.js'
 
 function Books(props) {
     const bookArr = props.allBooks
@@ -12,9 +14,19 @@ function Books(props) {
             <div>{book.bookPublisher}</div>
             <div>{book.bookYear}</div>
             <button onClick={() => props.addToCart(book)}>Add to cart</button>
+            <br />
+            <button onClick={() => {deleteBook(book._id)}}>Delete</button>
         </div>
         )
     })
+
+    const deleteBook = async (bookIdVariable) => {
+        const response = await fetch(`http://localhost:8080/api/books/${bookIdVariable}`, {
+            method: 'DELETE'
+        })
+        const data = await response.json()
+        console.log(data)
+    }
 
     return(
         <>
@@ -30,7 +42,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addToCart: (book) => dispatch({type: 'BOOKS', payload: book})
+        addToCart: (book) => dispatch(actionCreators.addToCart(book))
+        
     }
 }
  

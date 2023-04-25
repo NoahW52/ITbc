@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { NavLink, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function AddPage() {
     const navigate = useNavigate()
@@ -30,11 +31,21 @@ function AddPage() {
 
     return (
         <>
+        <h1>Add a book to the database</h1>
+        <Link to="/">
+            <button>Return Home</button>
+        </Link>
+        <br />
             <input type="text" placeholder="Title" name="title" onChange={handleBookChange} />
+            <br />
             <input type="text" placeholder="Genre" name="genre" onChange={handleBookChange} />
+            <br />
             <input type="text" placeholder="author" name="publisher" onChange={handleBookChange} />
+            <br />
             <input type="text" placeholder="year" name="year" onChange={handleBookChange} />
+            <br />
             <input type="text" placeholder="book pic" name="imageURL" onChange={handleBookChange} />
+            <br />
             <button onClick={handleAddBook} >Submit</button>
         </>
     )
