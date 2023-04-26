@@ -41,6 +41,21 @@ app.delete('/api/books/:_id', async (req,res) => {
     res.json(deleteBook)
 })
 
+app.post('/api/books/:_id', async (req,res) => {
+    const id =req.params._id
+
+    const updateBook = {
+        bookTitle: req.body.bookTitle,
+        bookGenre: req.body.bookGenre,
+        bookPublisher: req.body.bookPublisher,
+        bookYear: req.body.bookYear,
+        bookImageURL: req.body.bookImageURL
+    }
+
+    const updated = await Book.findByIdAndUpdate(id, updateBook)
+    res.json(updated)
+})
+
 app.get('/api/books', async (req,res) => {
     const books = await Book.find({})
     res.json(books)
