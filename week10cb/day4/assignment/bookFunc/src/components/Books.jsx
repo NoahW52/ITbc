@@ -1,5 +1,5 @@
-import { useState } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import '../css/books.css'
 import * as actionCreators from '../store/creators/actionCreators.js'
 
@@ -16,6 +16,10 @@ function Books(props) {
             <button onClick={() => props.addToCart(book)}>Add to cart</button>
             <br />
             <button onClick={() => {deleteBook(book._id)}}>Delete</button>
+            <br />
+            <Link to={`/update-book/${book._id}/${book.bookTitle}/${book.bookGenre}/${book.bookPublisher}/${book.bookYear}`}>
+            <button >Update</button>
+            </Link>
         </div>
         )
     })

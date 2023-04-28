@@ -11,6 +11,11 @@ const Reducer = (state = initialState, action) => {
                 ...state,
                 cart: state.cart.concat(action.payload)
         }
+        // case action.Types.UPDATE:
+        //     return {
+        //         ...state,
+                
+        //     }
         default:
             return state
     }
