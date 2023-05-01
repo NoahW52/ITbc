@@ -1,4 +1,5 @@
-import './App.css'
+import './css/App.css'
+import './css/Book.css'
 import Book from './components/Book'
 
 function App() {
