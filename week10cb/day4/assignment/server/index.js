@@ -69,6 +69,36 @@ app.post('/register', async (req,res) => {
 //     }
 // })
 
+app.post('/api/login', async (req,res) => {
+    const username = req.body.username
+    const password = req.body.password
+
+    User.findOne({ username })
+    .then(user => {
+        if (!user) {
+            return res.status(401).json({success: false, message: 'Invalid user'})
+        }
+
+        bcrypt.compare(password, user.password)
+        .then(result => {
+            if (!result) {
+                return res.status(401).json({success: false, message: 'Invalid user'})
+            }
+
+            const token = jwt.sign({ username }, 'SECRETKEY')
+            res.json({ success:true, token })
+        })
+
+        .catch(err => {
+            return res.status(500).json({ success: false, message: 'Internal server error' })
+        })
+    })
+
+    .catch(err => {
+        return res.status(500).json({ success: false, message: 'Internal server error' })
+    })
+})
+
 app.post('/api/add-book', async (req,res) => {
     const bookTitle = req.body.title
     const bookGenre = req.body.genre
