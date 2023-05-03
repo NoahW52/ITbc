@@ -99,7 +99,7 @@ app.post('/api/add-book', authenticate, async (req,res) => {
     res.json(book)
 })
 
-app.delete('/api/books/:_id', async (req,res) => {
+app.delete('/api/books/:_id',authenticate, async (req,res) => {
     const id = req.params
     const deleteBook = await Book.findByIdAndDelete(id)
     res.json(deleteBook)
