@@ -5,11 +5,11 @@ function Add() {
     const navigate = useNavigate()
 
     const [newBook, setNewBook] = useState({
-        bookTitle: "",
-        bookGenre: "",
-        bookAuthor: "",
-        bookYear: "",
-        bookImageURL: ""
+        // bookTitle: "",
+        // bookGenre: "",
+        // bookAuthor: "",
+        // bookYear: "",
+        // bookImageURL: ""
     })
 
     const handleInput = (e) => {
@@ -18,7 +18,7 @@ function Add() {
         //Extracting the name and value properties from the input field. 'name' represents the name attribute of the input field, and 'value' represents the current value of the input field
         setNewBook((oldBook) => ({
             ...oldBook,
-            [name]: value,
+            [e.target.name]: e.target.value,
         }))
     }
 

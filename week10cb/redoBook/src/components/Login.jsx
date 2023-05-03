@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 function Login() {
     const [ Log, setLog ] = useState({})
@@ -30,6 +30,9 @@ function Login() {
             <input type="text" placeholder="username" name="username" onChange={handleInput} />
             <input type="text" placeholder="password" name="password" onChange={handleInput}/>
             <button onClick={handleButton}>login</button>
+            <Link to={'/register'}>
+                <button>Register Here</button>
+            </Link>
         </>
     )
 }
