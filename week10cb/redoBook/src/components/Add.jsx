@@ -22,11 +22,12 @@ function Add() {
         }))
     }
 
-    const newBookInput = async () => {
+    const newBookInput = async (jwt) => {
         const response = await fetch('http://localhost:8080/api/add-book', {
             method: 'POST',
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "authorization": `bearer ${jwt}`
             },
             body: JSON.stringify(newBook)
         })
@@ -51,7 +52,9 @@ function Add() {
         <br />
         <input type="date" name="year" placeholder="Year" onChange={handleInput}/>
         <br />
-        <button onClick={newBookInput}>Submit</button>
+        <button onClick={() => newBookInput(localStorage.getItem("jwt"))}>Submit</button>
+        {/* the "jwt" passed into getItem is the same "jwt established in SignUp.jsx and login.jsx" 
+        Can also check if token is going through in the google developer tools: Application => LocalStorage => localhost => and after logging in I should be able to see my key*/}
         </>
     )
     

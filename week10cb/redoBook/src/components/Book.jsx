@@ -45,9 +45,6 @@ console.log(state)
     return(
         <>
             <h1>Welcome to your BookBarn!</h1>
-            <Link to={'/add-book'}>
-                <button>AddBook Here!</button>
-            </Link>
             <section>{booksArr}</section>
         </>
     )

@@ -7,9 +7,10 @@ function App() {
 
   return (
     <>
-      <Link to={'/register'}>
+    <br />
+      {/* <Link to={'/register'}>
           <button>Register Here</button>
-      </Link>
+      </Link> */}
     <Book />
     </>
   )

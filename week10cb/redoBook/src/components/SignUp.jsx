@@ -30,7 +30,8 @@ function SignUp() {
             },
             body: JSON.stringify(user)
         })
-        console.log(response)
+        const result = await response.json()
+        localStorage.setItem('jwt', result.token)
         navigate('/')
     }
 
