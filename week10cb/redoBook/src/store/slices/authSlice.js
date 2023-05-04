@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    auth: false
+    auth: false,
+    token: null
 }
 
 export const authSlice = createSlice({
@@ -11,10 +12,16 @@ export const authSlice = createSlice({
     reducers: {
         signUp: (state, action) => {
             //signUp is the same as actionTypes.BOOKS in my other bookbarn. They are the variable name of what holds the action that's happening
-            state.auth = action.payload != null
+            const token = action.payload
+            state.auth = true
+            state.token = token
+        },
+        signOut: (state) => {
+            state.auth = false
+            state.token
         }
     }
 })
-export const { signUp } = authSlice.actions
+export const { signUp, signOut } = authSlice.actions
 
 export default authSlice.reducer

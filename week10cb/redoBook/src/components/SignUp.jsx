@@ -1,9 +1,12 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import '../css/SignUp.css'
+import { useDispatch } from 'react-redux'
+import { signUp } from "../store/slices/authSlice"
 
 function SignUp() {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [user, setUser] = useState({})
 
@@ -32,6 +35,7 @@ function SignUp() {
         })
         const result = await response.json()
         localStorage.setItem('jwt', result.token)
+        dispatch(signUp())
         navigate('/')
     }
 

@@ -12,6 +12,7 @@ const bookSlice = createSlice({
             state.books = action.payload
             // state gets book from initialState on mine 3, action.payload is what the action receives from Book component.
         }
+        
     }
 })
 export const { getDisplay } = bookSlice.actions

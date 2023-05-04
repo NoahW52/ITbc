@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+//useSelector allows us to access the state
 import { useEffect } from "react";
 import { getDisplay } from "../store/slices/bookSlices";
 import '../css/Book.css'
@@ -7,7 +8,6 @@ function Book() {
     const state = useSelector(state => state.books)
     //state is going to return everything inside of the initialState that's in bookSlices
     //state.books is specifying that i just want the books value that's in the initialState object
-    console.log(state)
     const dispatch = useDispatch()
 
     useEffect(() => {
